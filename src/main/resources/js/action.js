@@ -1,5 +1,5 @@
-$('#buttonB').click(() =>{
-    let numbers = document.getElementById('#numbers').value;
+$(document).on("click","#buttonB",() =>{
+    let numbers = document.getElementById('numbers').value;
     const url = 'https://fathomless-bayou-96611.herokuapp.com/calculate';
     $.ajax({
         url: url,
