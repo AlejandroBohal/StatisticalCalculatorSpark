@@ -10,8 +10,8 @@ btn.addEventListener('click',() =>{
         dataType: 'TEXT',
         success:function(response){
             let data = JSON.parse(response.data);
-            $("#mean").append("Mean: " + data.mean);
-            $("#std").append("Standard Deviation: " + data.std);
+            $("#mean").append("Mean: ");
+            $("#std").append("Standard Deviation: ");
         }
     });
 });
