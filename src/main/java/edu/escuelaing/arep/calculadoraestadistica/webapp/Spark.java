@@ -21,7 +21,6 @@ public class Spark {
             return null;
         });
         post("/calculate",(req,res) ->{
-            res.status(200);
             return c.calculateMeanAndStd(req.body());
         });
 
