@@ -2,7 +2,7 @@ $('button').click(() =>{
     let numbers = document.getElementById('numbers').value.split(' ');
     const url = 'https://fathomless-bayou-96611.herokuapp.com/';
     $.ajax({
-        url: url+ '/calculate',
+        url: url+ 'calculate',
         method: 'post',
         dataType: 'text',
         success: (response) =>{
