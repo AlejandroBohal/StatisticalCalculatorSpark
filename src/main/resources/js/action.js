@@ -1,12 +1,11 @@
 $(document).on("click","#buttonB",() =>{
-    let numbers = document.getElementById('numbers').value;
+    let numbers = document.getElementById('numbers').value.toString();
     const url = 'https://fathomless-bayou-96611.herokuapp.com/calculate';
-    $.ajax({
+    $.post({
         url: url,
-        type: 'POST',
-        body: numbers,
+        data: numbers,
         dataType: 'text',
-        success: (response) =>{
+        success: function (response){
             let data = JSON.parse(response.data);
             $("#mean").append("Mean: " + data.mean);
             $("#std").append("Standard Deviation: " + data.std);
