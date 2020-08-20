@@ -3,7 +3,7 @@ $(document).on("click","#buttonB",() =>{
     const url = 'https://fathomless-bayou-96611.herokuapp.com/calculate';
     $.ajax({
         url: url,
-        method: 'post',
+        method: 'POST',
         dataType: 'text',
         success: (response) =>{
             let data = JSON.parse(response.data);
