@@ -8,10 +8,10 @@ btn.addEventListener('click',() =>{
         type:'POST',
         data: numbers,
         dataType: 'TEXT',
-        success:function(response){
+        success:(response)=>{
             let data = JSON.parse(response.data);
-            $("#mean").append("Mean: ");
-            $("#std").append("Standard Deviation: ");
+            $(".mean").append("Mean: " );
+            $(".std").append("Standard Deviation: " );
         }
     });
 });
