@@ -1,9 +1,8 @@
 package edu.escuelaing.arep.calculadoraestadistica.webapp;
 
-import spark.Request;
-import spark.Response;
 import static spark.Spark.*;
 
+import edu.escuelaing.arep.calculadoraestadistica.calculator.Calculator;
 public class Spark {
 
     /**
@@ -12,35 +11,20 @@ public class Spark {
      * /hello relative URL.
      */
     public static void main(String[] args) {
+        Calculator c = new Calculator();
+
         port(getPort());
-        get("/inputdata", (req, res) -> inputDataPage(req, res));
-        get("/results", (req, res) -> resultsPage(req, res));
-    }
 
-    private static String inputDataPage(Request req, Response res) {
-        String pageContent
-                = "<!DOCTYPE html>"
-                + "<html>"
-                + "<body>"
-                + "<h2>HTML Forms</h2>"
-                + "<form action=\"/results\">"
-                + "  First name:<br>"
-                + "  <input type=\"text\" name=\"firstname\" value=\"Mickey\">"
-                + "  <br>"
-                + "  Last name:<br>"
-                + "  <input type=\"text\" name=\"lastname\" value=\"Mouse\">"
-                + "  <br><br>"
-                + "  <input type=\"submit\" value=\"Submit\">"
-                + "</form>"
-                + "<p>If you click the \"Submit\" button, the form-data will be sent to a page called \"/results\".</p>"
-                + "</body>"
-                + "</html>";
-        return pageContent;
-    }
+        get("/", (req, res) -> {
+            res.redirect("/index.html");
+            res.status(200);
+            return null;
+        });
+        post("/calculate",(req,res) ->{
+            res.status(200);
+            return c.calculateMeanAndStd(req.body());
+        });
 
-    private static String resultsPage(Request req, Response res) {
-        return req.queryParams("firstname") + " " +
-                req.queryParams("lastname");
     }
 
     /**

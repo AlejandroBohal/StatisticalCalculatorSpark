@@ -1,9 +1,7 @@
 package edu.escuelaing.arep.calculadoraestadistica.calculator;
 
+import com.google.gson.Gson;
 import edu.escuelaing.arep.calculadoraestadistica.datastructures.LinkedList;
-
-
-import java.math.BigDecimal;
 
 /**
  *Statistical calculator that helps calculate the
@@ -40,6 +38,24 @@ public class Calculator
         }
         answer = Math.sqrt(answer/(data.getSize()-1));
         return answer;
+    }
+    public String calculateMeanAndStd(String data){
+        LinkedList<Double> dataDouble = convertToLinkedList(data);
+        Gson gson = new Gson();
+        double mean = calculateMean(dataDouble);
+        double std = calculateStandardDeviation(dataDouble);
+        String res = "{\"std\":"+std+",\"mean\":"+mean+"}";
+        return gson.toJson(res);
+    }
+
+    private static LinkedList<Double> convertToLinkedList(String data){
+        LinkedList<Double> linkedList= new LinkedList<Double>();
+        String[] splitData = data.split(" ");
+        for (String numberString: splitData){
+            double number = Double.parseDouble(numberString);
+            linkedList.add(number);
+        }
+        return linkedList;
     }
 
 }
