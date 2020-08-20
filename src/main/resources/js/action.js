@@ -1,6 +1,6 @@
 let btn = document.getElementById('buttonB');
 
-btn.addEventListener()('click',() =>{
+btn.addEventListener('click',() =>{
     let numbers = document.getElementById('numbers').value.toString();
     const url = 'https://fathomless-bayou-96611.herokuapp.com/calculate/';
     jQuery.ajax({
