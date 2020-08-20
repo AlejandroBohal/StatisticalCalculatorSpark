@@ -41,11 +41,10 @@ public class Calculator
     }
     public String calculateMeanAndStd(String data){
         LinkedList<Double> dataDouble = convertToLinkedList(data);
-        Gson gson = new Gson();
+
         double mean = calculateMean(dataDouble);
         double std = calculateStandardDeviation(dataDouble);
-        String res = "{\"std\":"+std+",\"mean\":"+mean+"}";
-        return gson.toJson(res);
+        return "{\"std\":"+std+",\"mean\":"+mean+"}";
     }
 
     private static LinkedList<Double> convertToLinkedList(String data){

@@ -2,6 +2,7 @@ package edu.escuelaing.arep.calculadoraestadistica.webapp;
 
 import static spark.Spark.*;
 
+import com.google.gson.Gson;
 import edu.escuelaing.arep.calculadoraestadistica.calculator.Calculator;
 public class Spark {
 
@@ -21,7 +22,9 @@ public class Spark {
             return null;
         });
         post("/calculate",(req,res) ->{
-            return c.calculateMeanAndStd(req.body());
+            String string = c.calculateMeanAndStd(req.body());
+            Gson gson = new Gson();
+            return gson.toJson(string);
         });
 
     }

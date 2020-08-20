@@ -13,6 +13,6 @@ $(document).on("click","#buttonB",() =>{
         error: (error) =>{
             console.log(error);
         }
-    })
+    });
 
 })
