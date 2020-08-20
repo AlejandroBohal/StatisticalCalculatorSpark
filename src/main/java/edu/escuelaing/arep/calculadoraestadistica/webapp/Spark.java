@@ -14,7 +14,7 @@ public class Spark {
         Calculator c = new Calculator();
 
         port(getPort());
-
+        staticFileLocation("/");
         get("/", (req, res) -> {
             res.redirect("/index.html");
             res.status(200);
