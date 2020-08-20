@@ -22,9 +22,10 @@ public class Spark {
             return null;
         });
         post("/calculate",(req,res) ->{
-            res.status(200);
+            System.out.println(req.body());
             String string = c.calculateMeanAndStd(req.body());
             Gson gson = new Gson();
+            System.out.println(gson.toJson(string));
             return gson.toJson(string);
         });
 

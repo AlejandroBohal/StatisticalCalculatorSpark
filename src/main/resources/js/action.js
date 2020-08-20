@@ -1,17 +1,14 @@
 let btn = document.getElementById('buttonB');
 
 btn.addEventListener('click',() =>{
-    let numbers = document.getElementById('numbers').value.toString();
-    const url = 'https://fathomless-bayou-96611.herokuapp.com/calculate/';
-    jQuery.ajax({
-        url: url,
-        type:'POST',
-        data: numbers,
-        dataType: 'TEXT',
-        success:(response)=>{
-            let data = JSON.parse(response.data);
-            $(".mean").append("Mean: " );
-            $(".std").append("Standard Deviation: " );
-        }
-    });
+    let numbers = document.getElementById('numbers').value;
+    axios.post('http://fathomless-bayou-96611.herokuapp.com/calculate', numbers)
+        .then(res => {
+            let data = JSON.parse(res.data);
+            $(".mean").append( "<span>mean: " + data.mean + "</span>");
+            $(".std").append( "<span>std:" + data.std + "</span>");
+        })
+        .catch( error =>{
+            console.log(error);
+        })
 });
