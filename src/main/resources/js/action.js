@@ -4,7 +4,7 @@ $(document).on("click","#buttonB",() =>{
     $.ajax({
         url: url,
         method: 'POST',
-        data: numbers,
+        body: numbers,
         dataType: 'text',
         success: (response) =>{
             let data = JSON.parse(response.data);
