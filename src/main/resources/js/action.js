@@ -6,10 +6,9 @@ $(document).on("click","#buttonB",() =>{
         method: 'post',
         dataType: 'text',
         success: (response) =>{
-            console.log("Hola")
             let data = JSON.parse(response.data);
-            $('#mean').append("Mean: " + data.mean);
-            $('#standard').append("Standard Deviation: " + data.std);
+            $("#mean").append("Mean: " + data.mean);
+            $("#std").append("Standard Deviation: " + data.std);
         },
         error: (error) =>{
             console.log(error);
