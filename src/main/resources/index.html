@@ -15,18 +15,24 @@
         <span class="badge badge-pill badge-primary w-50 mx-auto" style="height:50px;font-size:2vw;">Statistical Calculator</span>
     </div>
     <div class="card">
-        <h5 class="card-title">Calculate Mean and Standard Deviation</h5>
+        <div class="card-header">
+            <div class="card-tittle badge badge-pill badge-primary"> Statistical Calculator</div>
+            <p class="badge badge-pill badge-primary"> Calculates Arithmetic Mean</p>
+            <p class="badge badge-pill badge-primary"> Calculates Standard Deviation</p>
+        </div>
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label for="numbers">Numbers</label>
-                    <input class="form-control" id="numbers"  placeholder="Numbers separated by spaces">
-                    <input type="button" id="buttonB" value="Calculate" class="btn btn-primary my-3">
+                    <label for="numbers" class="justify-content-center text-center alert alert-primary w-100">Numbers</label>
+                    <input class="form-control justify-content-center text-center" id="numbers"  placeholder="Numbers separated by spaces">
+
+                    <input type="button" id="buttonB" value="Calculate" class="btn btn-primary my-2 w-100">
+
                 </div>
             </form>
         </div>
-        <div class="card-footer">
-            <p>Results</p>
+        <div class="card-footer justify-content-center text-center">
+            <p class="alert alert-primary">Results</p>
             <p class="mean"> </p>
             <p class="std"> </p>
         </div>
