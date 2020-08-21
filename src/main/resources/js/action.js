@@ -2,7 +2,7 @@ let btn = document.getElementById('buttonB');
 
 btn.addEventListener('click',() =>{
     let numbers = document.getElementById('numbers').value;
-    axios.post('http://fathomless-bayou-96611.herokuapp.com/calculate', numbers)
+    axios.post('https://fathomless-bayou-96611.herokuapp.com/calculate', numbers)
         .then(res => {
             $('.mean').html('');
             $('.std').html('');
