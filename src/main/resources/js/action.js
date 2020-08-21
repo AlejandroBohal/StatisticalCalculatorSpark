@@ -5,8 +5,8 @@ btn.addEventListener('click',() =>{
     axios.post('http://fathomless-bayou-96611.herokuapp.com/calculate', numbers)
         .then(res => {
             let data = JSON.parse(res.data);
-            $(".mean").append( "<span>mean: " + data.mean + "</span>");
-            $(".std").append( "<span>std:" + data.std + "</span>");
+            $(".mean").append( "<span>Arithmetic mean: " + data.mean + "</span>");
+            $(".std").append( "<span>Standard Deviation :" + data.std + "</span>");
         })
         .catch( error =>{
             console.log(error);
