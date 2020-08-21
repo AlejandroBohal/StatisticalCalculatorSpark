@@ -8,9 +8,13 @@ A Linked List was implemented to store the data, Git was used for change control
 
 ## Getting Started
 ![](https://cdn.discordapp.com/attachments/740467292734881863/746231422297047050/unknown.png)
+
 The web aplicattion implemented with Spark and deployed to heroku can be found in the following link:
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](http://fathomless-bayou-96611.herokuapp.com/)
+
 Continuos integration status Circle CI.
+
 [![CircleCI](https://circleci.com/gh/AlejandroBohal/StatisticalCalculatorSpark.svg?style=svg)](https://circleci.com/gh/AlejandroBohal/StatisticalCalculatorSpark)
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
